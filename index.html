@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>英文單字卡管理後台</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>英文單字卡管理後台</h1>
+      <p>管理者可在此新增單字資料，並透過後端 Google Apps Script 將資料存進 Google 試算表。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section admin-panel">
+      <h2>新增單字資料</h2>
+      <p>請填入英文單字、中文翻譯、字根分析、例句與詞性，然後按「儲存單字」。</p>
+
+      <form id="wordForm" class="word-form">
+        <div class="form-grid">
+          <label class="form-field">
+            <span>英文單字</span>
+            <input type="text" id="word" name="word" placeholder="Enter word" required />
+          </label>
+          <label class="form-field">
+            <span>中文翻譯</span>
+            <input type="text" id="translation" name="translation" placeholder="翻譯" required />
+          </label>
+          <label class="form-field full-width">
+            <span>字根分析</span>
+            <textarea id="rootAnalysis" name="rootAnalysis" placeholder="例如：photo- 意為光" rows="3"></textarea>
+          </label>
+          <label class="form-field full-width">
+            <span>例句</span>
+            <textarea id="example" name="example" placeholder="例如：The photograph captured the sunset." rows="3"></textarea>
+          </label>
+          <label class="form-field">
+            <span>詞性</span>
+            <input type="text" id="partOfSpeech" name="partOfSpeech" placeholder="noun / verb / adjective" />
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">儲存單字</button>
+          <p id="formMessage" class="form-message"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 英文單字卡管理系統。</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
